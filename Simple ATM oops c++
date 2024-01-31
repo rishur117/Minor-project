@@ -1,0 +1,82 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main()
+{
+    cout<<"******************************************"<<endl;
+    cout<<"******************************************"<<endl;
+    cout<<"************ welcome to my ATM ***********"<<endl;
+    cout<<"******************************************"<<endl;
+    cout<<"******************************************"<<endl;
+    
+    int tpin ,pin,option,option1,debit,credit;
+    double balance=10000 , remainingbalance;
+    cout<<"\nEnter a random number for creation ATM pin: ";
+    cin>>tpin;
+    
+    cout<<"Your pin is created!!"<<endl;
+    
+    cout<<"Enter your pin: ";
+    cin>>pin;
+    if (pin == tpin){
+       cout<<"Hello user you entered in ATM"<<endl;
+       cout<<"Press 1 too check balance \nPress 2 for chosse account type "<<endl;
+       cout<<"Press any one number for select option: ";
+       cin>>option;
+       switch(option)
+       {
+        case 1:
+        cout<<"Your total balance is: "<<balance<<endl;
+        break;
+        case 2:
+        cout<<"Press 1 for current account \nPress 2 for saving account "<<endl;
+        cout<<"Press any one number for select option: ";
+        cin>>option1;
+        switch(option1){
+            case 1:
+            cout<<"Current account but current account not available in our bank"<<endl;
+            break;
+            case 2:
+            cout<<"Saving account \nNow you can withdraw you balance"<<endl;
+            
+            cout<<"Press 1 for debit amount \nPress 2 for credit amount"<<endl;
+            int option2;
+            cin>>option2;
+            switch(option2){
+                case 1:
+                cout<<"Enter your withdraw amount: ";
+                cin>>debit;
+                if(debit>=0 && debit<=10000)
+                {
+                cout<<"Congratulation you amount is debited "<<debit<<endl;
+                remainingbalance = balance-debit;
+                cout<<"Your remaining balance is "<<remainingbalance;
+                }
+                else{
+                    cout<<"Your balance is insufficiant!!"<<endl;
+                }
+                break;
+                case 2:
+                cout<<"Enter credit amount: ";
+                cin>>credit;
+                double totalbalance = balance+credit;
+                cout<<"Cogratulation your amount is credited"<<endl;
+                cout<<"Your total balance is: "<<totalbalance;
+                break;
+            
+            }
+                
+        }
+     
+       }
+    }else{
+        cout<<"Wrong pin entered !!";
+        
+    }
+    cout<<"\t\tThanks for using ATM \n\t\tVisit again!!";
+
+    
+    
+getch();
+return 0;
+}
